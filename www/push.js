@@ -374,13 +374,3 @@ module.exports = {
    */
   PushNotification: PushNotification
 };
-
-// Installation constructor that binds PushNotification to window
-PushNotification.install = function() {
-  if (!window.plugins) {
-    window.plugins = {};
-  }
-  window.plugins.pushNotification = new PushNotification();
-  return window.plugins.pushNotification;
-};
-cordova.addConstructor(PushNotification.install);
